@@ -5,10 +5,8 @@
 
 Function Erase-Baseline-If-Already-Exists() {
     $baselineExists = Test-Path -Path .\baseline.txt
-    #Checking if baseline exists
 
     if ($baselineExists) {
-    #Delete it (if true)
     Remove-Item -Path .\baseline.txt
     }
 }
@@ -74,7 +72,7 @@ elseif ($response -eq "B".ToUpper()) {
             #Notify if a new file has been created
             if ($fileHashDictionary[$hash.Path] -eq $null) {
 
-                #A new file has been created (that does not exist in the dictionary)!
+                #A new file has been created (that does not exist in the dictionary)
                 Write-Host "$($hash.Path) has been created!" -ForegroundColor Green
 
             }
